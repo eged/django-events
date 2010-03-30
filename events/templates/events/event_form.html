@@ -10,6 +10,7 @@
 {% block body %}
     <form class="uniForm" id="create-event" method="POST" enctype="multipart/form-data" 
             action="{% url events_change id=id %}">
+{% csrf_token %}
         <fieldset class="inlineLabels">
 
 	    {{form|as_uni_form}}

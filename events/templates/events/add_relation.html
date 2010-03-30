@@ -4,6 +4,7 @@
 
 {% block body %}
     <form class="uniForm" id="create-event" method="POST" enctype="multipart/form-data" 
+{% csrf_token %}
             action="{% url events_add_relation event_id=event_id user_id=request.user.id %}">
         <fieldset class="inlineLabels">
 

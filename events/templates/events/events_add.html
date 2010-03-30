@@ -10,6 +10,7 @@
 {% block body %}
     <form class="uniForm" id="create-event" method="POST" enctype="multipart/form-data" 
             action="{% url events_add app_label=app_label model_name=model_name id=obj.id %}">
+{% csrf_token %}
         <fieldset class="inlineLabels">
 
 	    {{form|as_uni_form}}
