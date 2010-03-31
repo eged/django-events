@@ -1,0 +1,8 @@
+<ul id="event_box">
+    {% for event in event_list %}
+    <li>
+      <a href="{{ event.get_absolute_url }}"><span class="date">{{ event.start|date:"M/d" }}@{{event.start|time:"H:i"}}</span>
+      <span class="title">{{event.title}}</span></a>
+    </li>
+    {% endfor %}
+</ul>
