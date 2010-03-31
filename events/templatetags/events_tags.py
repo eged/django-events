@@ -102,3 +102,16 @@ def add_remove_event_relation(context, event, user):
     request = context['request']
 
     return locals()
+
+@register.inclusion_tag('events/tags/upcoming_events.html', takes_context=False)    
+def upcoming_events(context, number):
+    '''
+    {% upcoming_events 5 use_context %} 
+    Where: 5 = number of events to retrieve
+    use_context determines if we are looking up for the current object
+    '''
+
+    event_list = Event.futures.all()[:number]
+
+    return locals()
+  
